@@ -6,9 +6,22 @@ let hasBlackJack = false;
 let isAlive = false;
 let message = "";
 
+let player = {
+  name: "Per",
+  chips: 145,
+  sayHello: function () {},
+};
+player.sayHello();
+
 let mesageEl = document.getElementById("message");
 let sumEl = document.getElementById("sum-el");
 let cardEl = document.getElementById("card-el");
+
+let playerName = "Per";
+let playerChips = 145;
+
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = player.name + ":$" + player.chips;
 
 function getRandomCard() {
   let randomNumber = Math.floor(Math.random() * 13) + 1;
@@ -46,7 +59,7 @@ function renderGame() {
     message = "You are out of the game! ";
     isAlive = false;
   }
-  console.log(sum);
+
 
   mesageEl.textContent = message;
 }
